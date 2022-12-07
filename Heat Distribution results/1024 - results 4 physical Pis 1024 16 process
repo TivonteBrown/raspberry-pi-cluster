@@ -1,0 +1,68 @@
+sequential + 1 process results for 1 pi and 4 pi runs averaged. Used to estimate 1024 sequential run time
+
+Testing for N = 128 ...
+61.188 + 73.419 + 76.148 + 81.701 = 292.456 / 4 = 73.114 
+
+Testing for N = 256 ...
+1273.108 + 1302.337 + 1325.833 + 1346.217 = 5247.495 / 4 = 1311.87375
+
+Testing for N = 512 ...
+20660.913 + 20962.987 + 21166.938 + 20847.947 = 83638.785 / 4 = 20909.69625
+
+ 1311.87375 / 73.114 = 17.94285
+ 
+ 20909.69625 / 1311.87375 = 15.93880
+ 
+ 17.94285 + 15.93880  = 33.88165 / 2 = 16.940825
+ 
+ 20909.69625 * 16.94083 = 354,227.50497 s / 3600 = 98.39653 hrs / 24 = 4.09986 days
+ 
+ Testing for N = 1024 Estimate 
+ sequential estimate = 354,227.50497 s / 3600 = 98.39653 hrs / 24 = 4.09986 days
+ 
+ P = 16 ... (47933.117) / 3600 = 13.315 hrs 7.39x faster than estimate
+											2.841 x faster than 1 pi
+ 
+ 1 physical pi 
+ P = 4 ... (136200.976) / 3600 = 37.834 hrs / 24 = 1.57 days
+ 
+ Sequential ... (328293.700) / 3600 = 91.193 hrs / 24 = 3.800 days
+
+1024 x 1024
+
+Sequential run
+	(328293.700) / 3600 = 91.193 hrs / 24 = 3.800 days
+
+1 physical pi 
+ 	P = 4 ... (136200.976) / 3600 = 37.834 hrs / 24 = 1.57 days 
+	2.41x faster than sequential run
+4 pi cluster
+	P = 16 ... (47933.117) / 3600 = 13.315 hrs
+	2.84x faster than 1 pi
+	6.85x faster than sequential run
+
+
+512 x 512
+
+Sequential run
+20913.9255 / 3600s = 5.80942375 hrs
+ 1 physical pi 
+ Fastest = 10125.607/3600s = 2.81 hrs
+2.07 x faster than sequential run
+4 pi cluster
+P = 16 ... 4530.632 / 3600s = 1.26 hrs
+2.23x faster than 1 pi
+4.62 x faster than sequential run
+
+256
+
+Sequential run
+1299.4705s/60s = 21.66m
+ 1 physical pi 
+ Fastest = 698.841/60 = 11.65m
+1.86 x faster than sequential run
+4 pi cluster
+Fastest = 478.969/60 = 7.98m
+1.46x faster than 1 pi
+2.71 x faster than sequential run
+

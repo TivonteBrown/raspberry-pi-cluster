@@ -1,0 +1,24 @@
+#!/bin/sh
+
+testone () {
+    echo -n "P = ${2} ... "
+    mpiexec --oversubscribe -n ${2} python3 parallel_heat_distribution.py ${1} result${1}.ppm
+    diff ref${1}.ppm result${1}.ppm
+    diff ref${1}.ppm.raw result${1}.ppm.raw
+    echo " Done."
+}
+
+testing () {
+    echo
+    echo "Testing for N = ${1} ..."
+    echo -n "Sequential ... "
+    python3 sequential_heat_distribution.py ${1} ref${1}.ppm
+    echo " Done"
+    for j in $(seq 1 16); do
+        testone ${1} ${j}
+    done
+}
+
+for i in 128 256 512 1204; do
+    testing ${i}
+done
